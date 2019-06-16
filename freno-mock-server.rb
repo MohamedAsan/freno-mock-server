@@ -9,5 +9,5 @@ get '/' do
 
   status status_code
   content_type :json
-  {'Value' => response_value}.to_json
+  {'Status' => status_code, 'Value' => response_value}.to_json
 end
