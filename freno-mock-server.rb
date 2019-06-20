@@ -4,7 +4,7 @@ require 'faker'
 
 get '/' do
   status_code = 429
-  response_value = 10
+  response_value = 100
   puts "Status Code: #{status_code} | Response Value: #{response_value}"
 
   status status_code
