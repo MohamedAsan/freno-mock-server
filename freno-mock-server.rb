@@ -3,13 +3,14 @@ require 'json'
 require 'faker'
 
 get '/' do
-  status_code = [200, 417, 429, 500, 503].sample
+  status_code = [200, 400, 417, 429, 500, 503].sample
 
   body = {
     'Status' => status_code
   }
   body['Message'] = case status_code
                     when 200 then 'No Replication Lag'
+                    when 404 then 'Route Not Found'
                     when 417 then 'Application Throttled'
                     when 429 then 'Replication Lag'
                     when 500 then 'Internal Server Error'
