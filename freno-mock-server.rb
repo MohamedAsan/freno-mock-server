@@ -3,7 +3,7 @@ require 'json'
 require 'faker'
 
 get '/' do
-  status_code = [200, 417, 429, 500].sample
+  status_code = [200, 417, 429, 500, 503].sample
   response_value = Faker::Number.within(0..100000).to_i/1000.0
   puts "Status Code: #{status_code} | Response Value: #{response_value}"
 
